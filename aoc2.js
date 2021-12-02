@@ -1,10 +1,10 @@
-const { getFileContentsAsArray } = require('./util')
+const { getChallengeData, runDay } = require('./util')
 
 function aoc21() {
-  const array = getFileContentsAsArray('./input2.txt')
+  const array = getChallengeData(2)
 
   const [horizPos, depthPos] = array.reduce(
-    (acc, curr, i) => {
+    (acc, curr) => {
       const [horizontal, depth] = acc
       const value = +curr[curr.length - 1]
       const firstWord = curr.split(' ')[0]
@@ -27,10 +27,10 @@ function aoc21() {
 }
 
 function aoc22() {
-  const array = getFileContentsAsArray('./input2.txt')
+  const array = getChallengeData(2)
 
   const [horizPos, depthPos] = array.reduce(
-    (acc, curr, i) => {
+    (acc, curr) => {
       const [horizontal, depth, aim] = acc
       const value = +curr[curr.length - 1]
       const firstWord = curr.split(' ')[0]
@@ -52,5 +52,4 @@ function aoc22() {
   return horizPos * depthPos
 }
 
-console.log(aoc21())
-console.log(aoc22())
+runDay(2, aoc21, aoc22)
