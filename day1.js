@@ -14,16 +14,16 @@ function getReducedList(array) {
   }, 0)
 }
 
-function aoc11() {
+function challenge1() {
   const array = getChallengeData(1).map(x => +x)
   return getReducedList(array)
 }
 
-function aoc12() {
+function challenge2() {
   const array = getChallengeData(1).map(x => +x)
   const lists = []
   array.forEach((x, i) => i + 2 < array.length ? lists.push(sum([array[i], array[i + 1], array[i + 2]])): '' )
   return getReducedList(lists)
 }
 
-runDay(1, aoc11, aoc12)
+runDay(1, challenge1, challenge2)

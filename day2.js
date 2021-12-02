@@ -1,6 +1,6 @@
 const { getChallengeData, runDay } = require('./util')
 
-function aoc21() {
+function challenge1() {
   const array = getChallengeData(2)
 
   const [horizPos, depthPos] = array.reduce(
@@ -26,7 +26,7 @@ function aoc21() {
   return horizPos * depthPos
 }
 
-function aoc22() {
+function challenge2() {
   const array = getChallengeData(2)
 
   const [horizPos, depthPos] = array.reduce(
@@ -52,4 +52,4 @@ function aoc22() {
   return horizPos * depthPos
 }
 
-runDay(2, aoc21, aoc22)
+runDay(2, challenge1, challenge2)

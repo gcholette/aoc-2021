@@ -1,2 +1,2 @@
-require('./aoc1.js')
-require('./aoc2.js')
+require('./day1.js')
+require('./day2.js')
