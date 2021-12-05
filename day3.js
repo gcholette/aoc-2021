@@ -1,7 +1,8 @@
-const { getChallengeData, runDay } = require('./util')
+const { getChallengeData, runDay, startChallenge, endChallenge } = require('./util')
 const day = 3
 
 function challenge1() {
+  startChallenge(day, 1)
   const array = getChallengeData(day)
 
   const countPerColumn = array.reduce((acc, curr) => {
@@ -23,7 +24,8 @@ function challenge1() {
     2
   )
 
-  return gamma * epsilon
+  const answer = gamma * epsilon
+  endChallenge(day, 1, answer)
 }
 
 function getRating(array, invert = false) {
@@ -52,11 +54,14 @@ function getRating(array, invert = false) {
 }
 
 function challenge2() {
+  startChallenge(day, 2)
   const array = getChallengeData(day).map((x) => x.split('').map((x) => +x))
 
-  return (
+  const answer = (
     parseInt(getRating(array, false), 2) * parseInt(getRating(array, true), 2)
   )
+
+  endChallenge(day, 2, answer)
 }
 
 runDay(day, challenge1, challenge2)

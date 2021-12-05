@@ -1,4 +1,4 @@
-const { getChallengeData, runDay, sum } = require('./util')
+const { getChallengeData, runDay, sum, startChallenge, endChallenge } = require('./util')
 const day = 4
 
 function createCell(value, marked = false) {
@@ -78,6 +78,7 @@ function boardUnmarkedSum(board) {
 }
 
 function challenge1() {
+  startChallenge(day, 1)
   const array = getChallengeData(day)
   const turns = array[0].split(',')
   const boards = parseBoards(array)
@@ -95,10 +96,11 @@ function challenge1() {
     return newMarkedBoards
   }, boards)
 
-  return finalSum
+  endChallenge(day, 1, finalSum)
 }
 
 function challenge2() {
+  startChallenge(day, 2)
   const array = getChallengeData(day)
   const turns = array[0].split(',')
   const boards = parseBoards(array).map((board, i) => ({
@@ -129,7 +131,9 @@ function challenge2() {
     }
 
     if (allBoardsWon) {
-      return boardUnmarkedSum(lastWinner.content) * parseInt(turn)
+      const answer = boardUnmarkedSum(lastWinner.content) * parseInt(turn)
+      endChallenge(day, 2, answer)
+      return answer
     }
   }
 }

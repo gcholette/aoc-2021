@@ -1,4 +1,5 @@
-const { getChallengeData, runDay, sum } = require('./util')
+const { getChallengeData, runDay, sum, startChallenge, endChallenge } = require('./util')
+const day = 1
 
 function getReducedList(array) {
   return array.reduce((acc, curr, i) => {
@@ -15,15 +16,22 @@ function getReducedList(array) {
 }
 
 function challenge1() {
+  startChallenge(day, 1)
   const array = getChallengeData(1).map(x => +x)
-  return getReducedList(array)
+  const answer = getReducedList(array)
+  endChallenge(day, 1, answer)
+  return answer
 }
 
 function challenge2() {
+  startChallenge(day, 2)
   const array = getChallengeData(1).map(x => +x)
   const lists = []
   array.forEach((x, i) => i + 2 < array.length ? lists.push(sum([array[i], array[i + 1], array[i + 2]])): '' )
-  return getReducedList(lists)
+
+  const answer = getReducedList(lists)
+  endChallenge(day, 2, answer)
+  return answer
 }
 
-runDay(1, challenge1, challenge2)
+runDay(day, challenge1, challenge2)
