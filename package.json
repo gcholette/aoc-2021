@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js --inspect"
+    "start": "node index.js --max-old-space-size=8192"
   },
   "author": "Gabriel Cholette-Rioux",
   "license": "ISC",

@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const getInputsPath = (x) => `./inputs/input${x}.txt`
+const getInputsPath = (x, test) => test ? `./inputs/input${x}_test.txt` : `./inputs/input${x}.txt`
 
 const getFileContentsAsArray = (filePath) =>
   fs
@@ -8,7 +8,7 @@ const getFileContentsAsArray = (filePath) =>
     .toString()
     .split(/\r\n|\n/g)
 
-const getChallengeData = (day) => getFileContentsAsArray(getInputsPath(day))
+const getChallengeData = (day, test = false) => getFileContentsAsArray(getInputsPath(day, test))
 
 const logDay = (x) => console.log(`\n******* Day ${x} *******`)
 
