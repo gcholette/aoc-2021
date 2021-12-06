@@ -7,16 +7,6 @@ const {
 } = require('./util')
 const day = 6
 
-function mapTroughFishes(fish) {
-  if (fish === 0) {
-    return 6
-  } else {
-    return +fish - 1
-  }
-}
-
-const namedReduce = (acc, curr) => (+curr === 0 ? acc + 1 : acc)
-
 function simulateDays(fishes, days) {
   if (days === 0) {
     return fishes
