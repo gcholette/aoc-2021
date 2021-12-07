@@ -1,4 +1,4 @@
-const { getChallengeData, runDay, sum, startChallenge } = require('./util')
+const { getChallengeData, runDay, sum, startChallenge, endChallenge } = require('./util')
 const day = 3
 
 function challenge1() {
