@@ -3,7 +3,7 @@ const day = 3
 
 function challenge1() {
   startChallenge(day, 1)
-  const array = getChallengeData(day)
+  const array = getChallengeData(day, true)
 
 
   const answer = 42
@@ -12,7 +12,7 @@ function challenge1() {
 
 function challenge2() {
   startChallenge(day, 2)
-  const array = getChallengeData(day)
+  const array = getChallengeData(day, true)
 
   const answer = 42
   endChallenge(day, 2, answer)

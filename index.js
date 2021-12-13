@@ -19,4 +19,5 @@ console.log(`
 //require('./day6.js')
 //require('./day7.js')
 //require('./day8.js')
-require('./day9.js') 
+//require('./day9.js') 
+require('./day10.js') 
